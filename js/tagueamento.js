@@ -11,10 +11,33 @@
 //   ga('send', 'event', 'menu', 'entre_em_contato','link_externo');  
 // })
 
-function entreEmContato(){
-  ga('send', 'event', 'menu', 'entre_em_contato','link_externo');  
+ga('send', 'pageview', location.pathname);
+
+function entreEmContato() {
+  ga('send', 'event', 'menu', 'entre_em_contato', 'link_externo');
   alert(1);
 }
-
-ga('send', 'pageview', location.pathname);
-ga('send', 'event', 'menu', 'download_pdf','download_pdf');
+function downloadPdf() {
+  ga('send', 'event', 'menu', 'download_pdf', 'download_pdf');
+  alert(1)
+}
+function btnLorem() {
+  ga('send', 'event', 'analise', 'ver_mais', 'Lorem')
+  alert(1)
+}
+function btnIpsum() {
+  ga('send', 'event', 'analise', 'ver_mais', 'Ipsum')
+  alert(1)
+}
+function btnDolor() {
+  ga('send', 'event', 'analise', 'ver_mais', 'Dolor')
+  alert(1)
+}
+document.getElementById('btnEnviar').onclick = function (e) {
+  var nome = document.getElementById('nome').value
+  var email = document.getElementById('email').value
+  var telefone = document.getElementById('telefone').value
+  var aceito = document.getElementById('aceito')
+  ga('send', 'event', 'contato', `name: ${nome}; email: ${email}; telefone: ${telefone}; aceito: ${aceito}`, 'preencheu')
+  alert(1)
+}
