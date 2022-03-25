@@ -33,11 +33,38 @@ function btnDolor() {
   ga('send', 'event', 'analise', 'ver_mais', 'Dolor')
   alert(1)
 }
+
 document.getElementById('btnEnviar').onclick = function (e) {
   var nome = document.getElementById('nome').value
   var email = document.getElementById('email').value
   var telefone = document.getElementById('telefone').value
   var aceito = document.getElementById('aceito')
   ga('send', 'event', 'contato', `name: ${nome}; email: ${email}; telefone: ${telefone}; aceito: ${aceito}`, 'preencheu')
+  ga('send', 'event', 'contato', 'enviado', 'enviado')
   alert(1)
 }
+
+/*var nome = document.getElementById('nome').onchange = function () {
+  ga('send', 'event', 'contato', `name: ${nome}`, 'preencheu')
+  alert(1)
+}
+
+var email = document.getElementById('email').onchange = function () {
+  ga('send', 'event', 'contato', `email: ${email}`, 'preencheu')
+  alert(1)
+}
+
+var telefone = document.getElementById('telefone').onchange = function () {
+  ga('send', 'event', 'contato', `telefone: ${telefone}`, 'preencheu')
+  alert(1)
+}
+
+var aceito = getElementById('aceito').onclick = function () {
+  ga('send', 'event', 'contato', `aceito: ${aceito}`, 'preencheu')
+  alert(1)
+}
+
+function btnEnviar() {
+  ga('send', 'event', 'contato', 'enviado', 'enviado')
+  alert(1)
+}*/
