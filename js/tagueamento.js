@@ -40,7 +40,7 @@ document.getElementById('btnEnviar').onclick = function (e) {
   ga('send', 'event', 'contato', 'enviado', 'enviado')
 }
 
-var nome = document.getElementById('nome')
+var nome = document.querySelector('#nome')
 nome.onchange = function () {
   ga('send', 'event', 'contato', `nome: ${nome.value}`, 'preencheu')
 }
@@ -57,8 +57,8 @@ telefone.onchange = function () {
 
 var aceito = document.getElementById('aceito')
 aceito.addEventListener('click', function () {
-  if(aceito.checked) {
+  if (aceito.checked) {
     ga('send', 'event', 'contato', `aceito: ${aceito.value}`, 'preencheu')
-  }    
+  }
 })
 //#endregion
